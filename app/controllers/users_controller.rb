@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-       params.require(:user).permit(:name, :introduction, :profile_image)
+       params.require(:user).permit(:name, :introduction, :profile_image, :postcode, :prefecture_code, :address_city, :address_street)
     end
 
     def screen_user
@@ -36,6 +36,5 @@ class UsersController < ApplicationController
         redirect_to user_path(current_user)
       end
     end
-
 end
 
