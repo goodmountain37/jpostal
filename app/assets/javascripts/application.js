@@ -15,3 +15,27 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require underscore
+//= require gmaps/google
+
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: gon.user.latitude,
+      lng: gon.user.longitude
+    },
+    zoom: 12,
+  });
+
+  marker = new google.maps.Marker({
+    position: {
+      lat: gon.user.latitude,
+      lng: gon.user.longitude
+    },
+    map: map
+  });
+}
