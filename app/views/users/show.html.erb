@@ -15,3 +15,11 @@
     <%= render 'books/index',books: @books %>
   </div>
 </div>
+
+<% if @user == current_user %>
+  <div class="map">
+    <h2>Your MAP</h2>
+    <div id="map"></div>
+  </div>
+<% else %>
+<% end %>

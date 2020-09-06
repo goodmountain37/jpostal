@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   has_many :favorites
 
+  geocoded_by :address_city
+  after_validation :geocode
+
   include JpPrefecture
   jp_prefecture :prefecture_code
   
